@@ -1,8 +1,37 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { TrendingUp, Users, Gamepad2, Coins, ArrowRight, Target, Zap, Trophy } from 'lucide-react';
+import ImageSlider from '../components/ImageSlider';
 
 const HomePage = () => {
+  // Hero slider images
+  const heroImages = [
+    {
+      src: '/hero-1.jpg', // Replace with your image path
+      alt: 'Tiger in the wild',
+      title: 'The King of the Jungle',
+      description: 'Dominating the crypto space with raw power and determination'
+    },
+    {
+      src: '/hero-2.jpg', // Replace with your image path
+      alt: 'Crypto trading chart',
+      title: 'Trading with the Tigers',
+      description: 'Join the most aggressive trading community in crypto'
+    },
+    {
+      src: '/hero-3.jpg', // Replace with your image path
+      alt: 'Gaming setup',
+      title: 'Gaming Empire',
+      description: 'Play, earn, and dominate in our Tiger-themed games'
+    },
+    {
+      src: '/hero-4.jpg', // Replace with your image path
+      alt: 'Community celebration',
+      title: 'Join the Pack',
+      description: 'Be part of the fastest-growing meme coin community'
+    }
+  ];
+
   const stats = [
     { label: 'Total Supply', value: '1,000,000,000', icon: Coins },
     { label: 'Holders', value: '50,000+', icon: Users },
@@ -42,35 +71,32 @@ const HomePage = () => {
   return (
     <div className="pt-16">
       {/* Hero Section */}
-      <section className="min-h-screen bg-gradient-to-br from-red-950 via-black to-orange-950 relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(239,68,68,0.1),transparent_70%)]"></div>
+      <section className="relative h-screen overflow-hidden">
+        {/* Full Screen Image Slider */}
+        <ImageSlider 
+          images={heroImages}
+          autoPlayInterval={4000}
+          showNavigation={true}
+          showDots={true}
+        />
         
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10">
-          <div className="text-center">
+        {/* Hero Content Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/30 to-black/60"></div>
+        
+        <div className="absolute inset-0 flex items-center z-10">
+          <div className="text-left max-w-4xl px-4 sm:px-6 lg:px-8 ml-8 md:ml-16 lg:ml-24">
             <motion.div
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
               className="mb-8"
             >
-              <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-red-500 via-orange-500 to-yellow-500 bg-clip-text text-transparent">
+              <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-red-500 via-orange-500 to-yellow-500 bg-clip-text text-transparent drop-shadow-2xl">
                 The Meme Coin with the Punch
               </h1>
-              <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto">
+              <p className="text-xl md:text-2xl text-white mb-8 max-w-3xl mx-auto drop-shadow-lg">
                 TigerBackwoods ($BACKWOODS) - Where memes meet mayhem in the wildest crypto jungle
               </p>
-            </motion.div>
-
-            {/* Animated Tiger Mascot */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 1, delay: 0.3 }}
-              className="mb-12"
-            >
-              <div className="w-64 h-64 mx-auto bg-gradient-to-br from-red-600 to-orange-600 rounded-full flex items-center justify-center shadow-2xl shadow-red-500/50">
-                <div className="text-8xl">🥊</div>
-              </div>
             </motion.div>
 
             {/* CTA Buttons */}
@@ -78,15 +104,15 @@ const HomePage = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
-              className="flex flex-col sm:flex-row gap-4 justify-center"
+              className="flex flex-col sm:flex-row gap-4 justify-start"
             >
-              <button className="bg-gradient-to-r from-red-600 to-orange-600 hover:from-red-700 hover:to-orange-700 text-white px-8 py-4 rounded-full font-bold text-lg transition-all duration-200 transform hover:scale-105 hover:shadow-lg hover:shadow-orange-500/25">
+              <button className="bg-gradient-to-r from-red-600 to-orange-600 hover:from-red-700 hover:to-orange-700 text-white px-8 py-4 rounded-full font-bold text-lg transition-all duration-200 transform hover:scale-105 hover:shadow-lg hover:shadow-orange-500/25 drop-shadow-lg">
                 Buy $BACKWOODS
               </button>
-              <button className="border-2 border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-white px-8 py-4 rounded-full font-bold text-lg transition-all duration-200 transform hover:scale-105">
+              <button className="border-2 border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-white px-8 py-4 rounded-full font-bold text-lg transition-all duration-200 transform hover:scale-105 drop-shadow-lg">
                 Join Telegram
               </button>
-              <button className="border-2 border-yellow-500 text-yellow-500 hover:bg-yellow-500 hover:text-black px-8 py-4 rounded-full font-bold text-lg transition-all duration-200 transform hover:scale-105">
+              <button className="border-2 border-yellow-500 text-yellow-500 hover:bg-yellow-500 hover:text-black px-8 py-4 rounded-full font-bold text-lg transition-all duration-200 transform hover:scale-105 drop-shadow-lg">
                 View Chart
               </button>
             </motion.div>
@@ -94,9 +120,9 @@ const HomePage = () => {
         </div>
 
         {/* Floating Elements */}
-        <div className="absolute top-20 left-10 w-4 h-4 bg-red-500 rounded-full animate-pulse"></div>
-        <div className="absolute top-40 right-20 w-6 h-6 bg-orange-500 rounded-full animate-bounce"></div>
-        <div className="absolute bottom-20 left-20 w-3 h-3 bg-yellow-500 rounded-full animate-pulse"></div>
+        <div className="absolute top-20 left-10 w-4 h-4 bg-red-500 rounded-full animate-pulse z-20"></div>
+        <div className="absolute top-40 right-20 w-6 h-6 bg-orange-500 rounded-full animate-bounce z-20"></div>
+        <div className="absolute bottom-20 left-20 w-3 h-3 bg-yellow-500 rounded-full animate-pulse z-20"></div>
       </section>
 
       {/* Key Stats Section */}
