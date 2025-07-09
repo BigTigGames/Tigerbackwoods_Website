@@ -21,7 +21,7 @@ const TokenomicsPage = () => {
     },
     {
       title: 'Staking Rewards',
-      description: 'Earn passive income by staking your $BACKWOODS tokens',
+      description: 'Earn passive income by staking your $TGBW tokens',
       icon: Coins,
       color: 'from-green-600 to-emerald-600'
     },
@@ -66,7 +66,7 @@ const TokenomicsPage = () => {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="text-xl text-gray-300 max-w-3xl mx-auto"
             >
-              Discover the economic model behind $BACKWOODS and how it powers the Tiger ecosystem
+              Discover the economic model behind $TGBW and how it powers the Tiger ecosystem
             </motion.p>
           </div>
 
@@ -177,7 +177,7 @@ const TokenomicsPage = () => {
               Token Utility
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              $BACKWOODS isn't just a meme coin - it's a utility token with real-world applications
+              $TGBW isn't just a meme coin - it's a utility token with real-world applications
             </p>
           </div>
 

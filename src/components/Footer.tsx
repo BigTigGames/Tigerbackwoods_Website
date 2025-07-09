@@ -31,7 +31,7 @@ const Footer = () => {
               </span>
             </div>
             <p className="text-gray-400 mb-4 max-w-md">
-              The meme coin with the punch. Join the jungle and experience the wildest crypto adventure with $BACKWOODS.
+              The meme coin with the punch. Join the jungle and experience the wildest crypto adventure with $TGBW.
             </p>
             <div className="flex space-x-4">
               {socialLinks.map((social) => (

@@ -95,7 +95,7 @@ const HomePage = () => {
                 The Meme Coin with the Punch
               </h1>
               <p className="text-xl md:text-2xl text-white mb-8 max-w-3xl mx-auto drop-shadow-lg">
-                TigerBackwoods ($BACKWOODS) - Where memes meet mayhem in the wildest crypto jungle
+                TigerBackwoods ($TGBW) - Where memes meet mayhem in the wildest crypto jungle
               </p>
             </motion.div>
 
@@ -106,9 +106,14 @@ const HomePage = () => {
               transition={{ duration: 0.8, delay: 0.6 }}
               className="flex flex-col sm:flex-row gap-4 justify-start"
             >
-              <button className="bg-gradient-to-r from-red-600 to-orange-600 hover:from-red-700 hover:to-orange-700 text-white px-8 py-4 rounded-full font-bold text-lg transition-all duration-200 transform hover:scale-105 hover:shadow-lg hover:shadow-orange-500/25 drop-shadow-lg">
-                Buy $BACKWOODS
-              </button>
+              <a
+                href="https://dexscreener.com/solana/6GTBQj1w2AH7xTLrCGijFTHFyjBUZL1Zq2jX1AdSpump"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-gradient-to-r from-red-600 to-orange-600 hover:from-red-700 hover:to-orange-700 text-white px-8 py-4 rounded-full font-bold text-lg transition-all duration-200 transform hover:scale-105 hover:shadow-lg hover:shadow-orange-500/25 drop-shadow-lg flex items-center justify-center"
+              >
+                Buy $TGBW
+              </a>
               <button className="border-2 border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-white px-8 py-4 rounded-full font-bold text-lg transition-all duration-200 transform hover:scale-105 drop-shadow-lg">
                 Join Telegram
               </button>
