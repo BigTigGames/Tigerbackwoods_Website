@@ -65,7 +65,8 @@ const ImageSlider: React.FC<ImageSliderProps> = ({
                          <img
                src={images[currentIndex].src}
                alt={images[currentIndex].alt}
-               className="w-full h-full object-cover"
+               className="w-full h-full object-cover object-center"
+               style={{ objectPosition: 'center' }}
              />
           </motion.div>
         </AnimatePresence>
