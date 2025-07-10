@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { TrendingUp, Users, Gamepad2, Coins, ArrowRight, Target, Zap, Trophy } from 'lucide-react';
+import { TrendingUp, Users, Gamepad2, Coins, Flame, Lock, Wallet, Trophy, Zap, ArrowRight, Target } from 'lucide-react';
 import ImageSlider from '../components/ImageSlider';
 
 const HomePage = () => {
@@ -33,10 +33,13 @@ const HomePage = () => {
   ];
 
   const stats = [
-    { label: 'Total Supply', value: '1,000,000,000', icon: Coins },
-    { label: 'Holders', value: '50,000+', icon: Users },
-    { label: 'Games', value: '12', icon: Gamepad2 },
-    { label: 'Market Cap', value: '$2.5M', icon: TrendingUp },
+    { label: 'Total Supply', value: '1,000,000,000', description: 'Total Token Supply', icon: Coins },
+    { label: '🔥 Tokens Burned', value: '100,000,000', description: 'Permanently Removed from Supply', icon: Flame },
+    { label: '🔐 Locked Tokens', value: '277,000,000+', description: 'Locked for Game Rewards, Staking & Treasury', icon: Lock },
+    { label: '💰 Circulating Supply', value: '~623,000,000', description: '(After Burn + Locks)', icon: Wallet },
+    { label: '📈 Market Cap', value: '$252,000', description: '(Based on current $TGBW price)', icon: TrendingUp },
+    { label: '👥 Holders', value: '400+', description: 'Wallets Holding $TGBW', icon: Users },
+    { label: '🎮 Games', value: '12', description: 'Play-to-Earn Titles in the Ecosystem', icon: Gamepad2 },
   ];
 
   const roadmapItems = [
@@ -49,7 +52,7 @@ const HomePage = () => {
 
   const utilities = [
     {
-      title: '$BACKWOODS Token',
+      title: '$TGBW Token',
       description: 'Earn, stake, and trade the most aggressive meme coin in the jungle',
       icon: Zap,
       color: 'from-red-600 to-orange-600'
@@ -67,6 +70,16 @@ const HomePage = () => {
       color: 'from-yellow-600 to-red-600'
     },
   ];
+
+  // Main Game Section Data
+  const mainGame = {
+    title: 'Tiger Links',
+    description: 'Match 3 with a twist! Play, compete, and win high-ticket rewards in thrilling PVP matches.',
+    bg: '/Tigerlinks-1.png',
+    status: 'live',
+    players: '5,000+',
+    rewards: '10,000 $TGBW',
+  };
 
   return (
     <div className="pt-16">
@@ -114,11 +127,23 @@ const HomePage = () => {
               >
                 Buy $TGBW
               </a>
-              <button className="border-2 border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-white px-8 py-4 rounded-full font-bold text-lg transition-all duration-200 transform hover:scale-105 drop-shadow-lg">
+              <a
+                href="https://t.me/TIGERBACKWOODSOFFICIAL"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="border-2 border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-white px-8 py-4 rounded-full font-bold text-lg transition-all duration-200 transform hover:scale-105 drop-shadow-lg flex items-center justify-center"
+              >
                 Join Telegram
-              </button>
+              </a>
               <button className="border-2 border-yellow-500 text-yellow-500 hover:bg-yellow-500 hover:text-black px-8 py-4 rounded-full font-bold text-lg transition-all duration-200 transform hover:scale-105 drop-shadow-lg">
-                View Chart
+                <a
+                  href="https://dexscreener.com/solana/6GTBQj1w2AH7xTLrCGijFTHFyjBUZL1Zq2jX1AdSpump"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block w-full h-full"
+                >
+                  View Chart
+                </a>
               </button>
             </motion.div>
           </div>
@@ -144,12 +169,54 @@ const HomePage = () => {
               >
                 <div className="flex items-center justify-between mb-4">
                   <stat.icon className="w-8 h-8 text-orange-400" />
-                  <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
                 </div>
                 <div className="text-3xl font-bold text-white mb-2">{stat.value}</div>
-                <div className="text-gray-400">{stat.label}</div>
+                <div className="text-gray-400 font-semibold mb-1">{stat.label}</div>
+                <div className="text-gray-500 text-sm">{stat.description}</div>
               </motion.div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Main Game Section */}
+      <div className="max-w-4xl mx-auto text-center mb-8">
+        <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-red-500 to-orange-500 bg-clip-text text-transparent">
+          Earn with our Unique Eco System
+        </h2>
+        <p className="text-xl text-gray-300">
+          Tigerbackwoods offers Play To Earn Games for you, Fill up your pockets with us.
+        </p>
+      </div>
+      <section className="flex justify-center mb-16">
+        <div className="relative w-full max-w-7xl mx-auto h-80 md:h-96 rounded-2xl overflow-hidden shadow-2xl group">
+          {/* Background Image */}
+          <img src={mainGame.bg} alt="Main Game" className="absolute inset-0 w-full h-full object-cover object-center z-0" />
+          {/* Overlay */}
+          <div className="absolute inset-0 bg-black/70 z-10"></div>
+          {/* Content */}
+          <div className="relative z-20 flex flex-col h-full justify-center items-start px-8 md:px-16">
+            <div className="mb-4 flex flex-col items-start">
+              <img src="/match 3.png" alt="Tiger Links Icon" className="w-20 h-20 md:w-24 md:h-24 rounded-full object-contain mb-4 bg-black/20" />
+              <span className="inline-block bg-gradient-to-r from-red-600 to-orange-600 text-white text-xs font-bold px-4 py-1 rounded-full mb-4 shadow-lg">MAIN GAME</span>
+              <h2 className="text-3xl md:text-5xl font-bold text-white mb-2 drop-shadow-2xl">{mainGame.title}</h2>
+              <p className="text-lg md:text-2xl text-gray-100 mb-6 max-w-2xl drop-shadow-lg">{mainGame.description}</p>
+            </div>
+            <div className="flex flex-col sm:flex-row items-center gap-6">
+              <a
+                href="https://fishanmango.itch.io/match-3-live"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-gradient-to-r from-red-600 to-orange-600 hover:from-red-700 hover:to-orange-700 text-white px-10 py-4 rounded-full font-bold text-lg transition-all duration-200 transform hover:scale-105 hover:shadow-lg hover:shadow-orange-500/25 drop-shadow-lg flex items-center gap-2"
+              >
+                <svg xmlns='http://www.w3.org/2000/svg' className='w-6 h-6' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M14.752 11.168l-6.518-3.759A1 1 0 007 8.06v7.88a1 1 0 001.234.97l6.518-1.878A1 1 0 0016 14.06V9.94a1 1 0 00-1.248-.772z' /></svg>
+                Play Now
+              </a>
+              <div className="flex flex-row gap-8 text-lg text-gray-200 font-semibold items-center">
+                <span><b>Players:</b> {mainGame.players}</span>
+                <span><b>Max Reward:</b> <span className="text-orange-400 font-bold">{mainGame.rewards}</span></span>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -203,7 +270,7 @@ const HomePage = () => {
               More Than a Meme
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Backwoods is building a meme gaming empire with real utility
+              $TGBW is building a meme gaming empire with real utility
             </p>
           </div>
 
@@ -247,7 +314,7 @@ const HomePage = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <motion.a
-              href="#"
+              href="https://x.com/tigerbckwoods"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
@@ -257,13 +324,13 @@ const HomePage = () => {
                 <div className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mb-4 mx-auto group-hover:scale-110 transition-transform">
                   <Target className="w-8 h-8 text-white" />
                 </div>
-                <h3 className="text-2xl font-bold text-white mb-2">Twitter</h3>
+                <h3 className="text-2xl font-bold text-white mb-2">X</h3>
                 <p className="text-gray-400">Latest updates and memes</p>
               </div>
             </motion.a>
 
             <motion.a
-              href="#"
+              href="https://t.me/TIGERBACKWOODSOFFICIAL"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}

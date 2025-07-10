@@ -20,13 +20,8 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2 group">
-            <div className="w-10 h-10 bg-gradient-to-br from-red-600 to-orange-600 rounded-full flex items-center justify-center transform group-hover:scale-110 transition-transform duration-200">
-              <Zap className="w-6 h-6 text-yellow-400" />
-            </div>
-            <span className="text-xl font-bold bg-gradient-to-r from-red-500 to-orange-500 bg-clip-text text-transparent">
-              TigerBackwoods
-            </span>
+          <Link to="/" className="flex items-center group">
+            <img src="/TGBW web icon.png" alt="TGBW Logo" style={{ width: '15.5rem', height: 'auto' }} className="object-contain rounded-full group-hover:scale-110 transition-transform duration-200" />
           </Link>
 
           {/* Desktop Navigation */}

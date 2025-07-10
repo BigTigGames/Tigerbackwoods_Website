@@ -1,12 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Twitter, MessageCircle, Github, Zap } from 'lucide-react';
+import { Twitter, MessageCircle, Zap } from 'lucide-react';
 
 const Footer = () => {
   const socialLinks = [
-    { icon: Twitter, href: '#', label: 'Twitter' },
-    { icon: MessageCircle, href: '#', label: 'Telegram' },
-    { icon: Github, href: '#', label: 'GitHub' },
+    { icon: Twitter, href: 'https://x.com/tigerbckwoods', label: 'X' },
+    { icon: MessageCircle, href: 'https://t.me/TIGERBACKWOODSOFFICIAL', label: 'Telegram' },
+    { icon: Twitter, href: 'https://x.com/tigerbckwoods', label: 'X' },
   ];
 
   const quickLinks = [

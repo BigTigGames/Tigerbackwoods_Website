@@ -154,10 +154,15 @@ const GamesPage = () => {
               <p className="text-lg md:text-2xl text-gray-100 mb-6 max-w-2xl drop-shadow-lg">{mainGame.description}</p>
             </div>
             <div className="flex flex-col sm:flex-row items-center gap-6">
-              <button className="bg-gradient-to-r from-red-600 to-orange-600 hover:from-red-700 hover:to-orange-700 text-white px-10 py-4 rounded-full font-bold text-lg transition-all duration-200 transform hover:scale-105 hover:shadow-lg hover:shadow-orange-500/25 drop-shadow-lg flex items-center gap-2">
+              <a
+                href="https://fishanmango.itch.io/match-3-live"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-gradient-to-r from-red-600 to-orange-600 hover:from-red-700 hover:to-orange-700 text-white px-10 py-4 rounded-full font-bold text-lg transition-all duration-200 transform hover:scale-105 hover:shadow-lg hover:shadow-orange-500/25 drop-shadow-lg flex items-center gap-2"
+              >
                 <svg xmlns='http://www.w3.org/2000/svg' className='w-6 h-6' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M14.752 11.168l-6.518-3.759A1 1 0 007 8.06v7.88a1 1 0 001.234.97l6.518-1.878A1 1 0 0016 14.06V9.94a1 1 0 00-1.248-.772z' /></svg>
                 Play Now
-              </button>
+              </a>
               <div className="flex flex-row gap-8 text-lg text-gray-200 font-semibold items-center">
                 <span><b>Players:</b> {mainGame.players}</span>
                 <span><b>Max Reward:</b> <span className="text-orange-400 font-bold">{mainGame.rewards}</span></span>

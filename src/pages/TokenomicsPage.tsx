@@ -1,15 +1,16 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { PieChart, TrendingUp, Shield, Zap, Lock, Users, Coins, Target } from 'lucide-react';
+import { PieChart, TrendingUp, Shield, Zap, Lock, Users, Coins, Target, Flame, Wallet, Gamepad2 } from 'lucide-react';
 
 const TokenomicsPage = () => {
   const tokenomics = [
-    { label: 'Total Supply', value: '1,000,000,000', percentage: 100, color: 'from-red-600 to-orange-600' },
-    { label: 'Liquidity Pool', value: '400,000,000', percentage: 40, color: 'from-blue-600 to-cyan-600' },
-    { label: 'Community Rewards', value: '300,000,000', percentage: 30, color: 'from-green-600 to-emerald-600' },
-    { label: 'Development', value: '150,000,000', percentage: 15, color: 'from-purple-600 to-pink-600' },
-    { label: 'Marketing', value: '100,000,000', percentage: 10, color: 'from-yellow-600 to-orange-600' },
-    { label: 'Team (Locked)', value: '50,000,000', percentage: 5, color: 'from-gray-600 to-gray-800' },
+    { label: 'Total Supply', value: '1,000,000,000', description: 'Total Token Supply', percentage: 100, color: 'from-red-600 to-orange-600', icon: Coins },
+    { label: '🔥 Tokens Burned', value: '100,000,000', description: 'Permanently Removed from Supply', percentage: 10, color: 'from-orange-600 to-yellow-600', icon: Flame },
+    { label: '🔐 Locked Tokens', value: '277,000,000+', description: 'Locked for Game Rewards, Staking & Treasury', percentage: 27.7, color: 'from-blue-600 to-cyan-600', icon: Lock },
+    { label: '💰 Circulating Supply', value: '~623,000,000', description: '(After Burn + Locks)', percentage: 62.3, color: 'from-green-600 to-emerald-600', icon: Wallet },
+    { label: '📈 Market Cap', value: '$252,000', description: '(Based on current $TGBW price)', percentage: null, color: 'from-purple-600 to-pink-600', icon: TrendingUp },
+    { label: '👥 Holders', value: '400+', description: 'Wallets Holding $TGBW', percentage: null, color: 'from-gray-600 to-gray-800', icon: Users },
+    { label: '🎮 Games', value: '12', description: 'Play-to-Earn Titles in the Ecosystem', percentage: null, color: 'from-yellow-600 to-orange-600', icon: Gamepad2 },
   ];
 
   const features = [
@@ -40,10 +41,13 @@ const TokenomicsPage = () => {
   ];
 
   const metrics = [
-    { label: 'Market Cap', value: '$2.5M', change: '+15.2%', positive: true },
-    { label: 'Total Holders', value: '50,000+', change: '+8.7%', positive: true },
-    { label: 'Tokens Burned', value: '25M', change: '+2.1%', positive: true },
-    { label: 'Liquidity', value: '$1.2M', change: '+5.3%', positive: true },
+    { label: 'Total Supply', value: '1,000,000,000', description: 'Total Token Supply', icon: Coins },
+    { label: '🔥 Tokens Burned', value: '100,000,000', description: 'Permanently Removed from Supply', icon: Flame },
+    { label: '🔐 Locked Tokens', value: '277,000,000+', description: 'Locked for Game Rewards, Staking & Treasury', icon: Lock },
+    { label: '💰 Circulating Supply', value: '~623,000,000', description: '(After Burn + Locks)', icon: Wallet },
+    { label: '📈 Market Cap', value: '$252,000', description: '(Based on current $TGBW price)', icon: TrendingUp },
+    { label: '👥 Holders', value: '400+', description: 'Wallets Holding $TGBW', icon: Users },
+    { label: '🎮 Games', value: '12', description: 'Play-to-Earn Titles in the Ecosystem', icon: Gamepad2 },
   ];
 
   return (
@@ -81,12 +85,11 @@ const TokenomicsPage = () => {
                 className="bg-gradient-to-br from-red-900/30 to-orange-900/30 p-6 rounded-xl border border-red-800/50 hover:border-orange-500/50 transition-all duration-300"
               >
                 <div className="flex items-center justify-between mb-2">
-                  <div className="text-2xl font-bold text-white">{metric.value}</div>
-                  <div className={`text-sm font-semibold ${metric.positive ? 'text-green-400' : 'text-red-400'}`}>
-                    {metric.change}
-                  </div>
+                  <metric.icon className="w-8 h-8 text-orange-400" />
                 </div>
-                <div className="text-gray-400">{metric.label}</div>
+                <div className="text-3xl font-bold text-white mb-2">{metric.value}</div>
+                <div className="text-gray-400 font-semibold mb-1">{metric.label}</div>
+                <div className="text-gray-500 text-sm">{metric.description}</div>
               </motion.div>
             ))}
           </div>
@@ -109,8 +112,8 @@ const TokenomicsPage = () => {
                 <div className="w-full h-full bg-gradient-to-br from-red-600 to-orange-600 rounded-full flex items-center justify-center shadow-2xl shadow-red-500/50">
                   <div className="w-32 h-32 bg-black rounded-full flex items-center justify-center">
                     <div className="text-center">
-                      <div className="text-3xl font-bold text-white">1B</div>
-                      <div className="text-sm text-gray-400">Total Supply</div>
+                      <div className="text-3xl font-bold text-white">1,000,000,000</div>
+                      <div className="text-sm text-gray-400">Total Token Supply</div>
                     </div>
                   </div>
                 </div>

@@ -7,7 +7,7 @@ const AboutPage = () => {
     {
       year: '2024 Q1',
       title: 'The Birth of a Legend',
-      description: 'TigerBackwoods was born from a simple idea: what if Tiger Woods was actually a tiger? The meme exploded across crypto Twitter.',
+      description: '$TGBW was born from a simple idea: what if Tiger Woods was actually a tiger? The meme exploded across crypto Twitter.',
       icon: Zap,
       completed: true
     },
@@ -116,7 +116,7 @@ const AboutPage = () => {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="text-xl text-gray-300 max-w-3xl mx-auto"
             >
-              From meme to mayhem - the incredible journey of how TigerBackwoods became the most aggressive meme coin in the jungle
+              From meme to mayhem - the incredible journey of how $TGBW became the most aggressive meme coin in the jungle
             </motion.p>
           </div>
 
@@ -132,15 +132,11 @@ const AboutPage = () => {
                 <div>
                   <h2 className="text-3xl font-bold text-white mb-4">The Origin Story</h2>
                   <p className="text-gray-300 leading-relaxed">
-                    It all started with a simple question on crypto Twitter: "What if Tiger Woods was actually a tiger?" 
-                    The absurdity of the idea combined with the legendary status of both tigers and golf created the perfect storm. 
-                    Within hours, memes were flying, and TigerBackwoods was born - not just as a token, but as a movement.
+                    What happens when you mix Tiger Woods' killer instinct, Tony the Tiger's hype, and a stoner's love for fat Backwoods blunts? You get Tiger Backwoods — a golf-swinging, trash-talking legend born from smoke and chaos. Rumor has it he emerged after a blunt so strong it split space-time, fusing sports greatness with cereal box swagger and blunt-fueled genius. Now he's here to take over crypto, torch every scam coin, and build the wildest Play-to-Earn empire the blockchain's ever seen.
                   </p>
                 </div>
-                <div className="text-center">
-                  <div className="w-40 h-40 bg-gradient-to-br from-red-600 to-orange-600 rounded-full flex items-center justify-center mx-auto shadow-2xl shadow-red-500/50">
-                    <div className="text-6xl">🐅⛳</div>
-                  </div>
+                <div className="text-center flex items-center justify-center">
+                  <img src="/hero-3.jpg" alt="Tiger Backwoods" className="w-80 h-80 rounded-full object-cover shadow-2xl shadow-red-500/50 border-4 border-orange-500" />
                 </div>
               </div>
             </div>
@@ -205,7 +201,7 @@ const AboutPage = () => {
               Meet the Pack
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              The legendary team behind TigerBackwoods (identities protected for their safety)
+              The legendary team behind $TGBW (identities protected for their safety)
             </p>
           </div>
 
@@ -238,7 +234,7 @@ const AboutPage = () => {
               Our Values
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              The principles that guide every decision in the TigerBackwoods ecosystem
+              The principles that guide every decision in the $TGBW ecosystem
             </p>
           </div>
 
