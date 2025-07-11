@@ -40,7 +40,7 @@ const Navbar = () => {
               </Link>
             ))}
             <a
-              href="https://dexscreener.com/solana/6GTBQj1w2AH7xTLrCGijFTHFyjBUZL1Zq2jX1AdSpump"
+              href="https://raydium.io/swap/?inputMint=sol&outputMint=6GTBQj1w2AH7xTLrCGijFTHFyjBUZL1Zq2jX1AdSpump"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-gradient-to-r from-red-600 to-orange-600 hover:from-red-700 hover:to-orange-700 text-white px-6 py-2 rounded-full font-semibold transition-all duration-200 transform hover:scale-105 hover:shadow-lg hover:shadow-orange-500/25"
@@ -80,7 +80,7 @@ const Navbar = () => {
               </Link>
             ))}
             <a
-              href="https://dexscreener.com/solana/6GTBQj1w2AH7xTLrCGijFTHFyjBUZL1Zq2jX1AdSpump"
+              href="https://raydium.io/swap/?inputMint=sol&outputMint=6GTBQj1w2AH7xTLrCGijFTHFyjBUZL1Zq2jX1AdSpump"
               target="_blank"
               rel="noopener noreferrer"
               className="w-full mt-4 bg-gradient-to-r from-red-600 to-orange-600 hover:from-red-700 hover:to-orange-700 text-white px-6 py-2 rounded-full font-semibold transition-all duration-200 text-center block"

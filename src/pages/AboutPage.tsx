@@ -13,37 +13,30 @@ const AboutPage = () => {
     },
     {
       year: '2024 Q2',
-      title: 'Community Explosion',
-      description: 'From 100 to 10,000 holders in just 30 days. The tiger community showed their claws and never looked back.',
+      title: 'Community Awakens',
+      description: 'Tiger Backwoods launched with no presale, no VCs, and no hype machine—just a bold vision. 100 million tokens were burned, 277 million+ locked, and the early community formed around a real Play-to-Earn promise.',
       icon: Users,
       completed: true
     },
     {
       year: '2024 Q3',
-      title: 'Game Development',
-      description: 'First mini-games launched. Tiger Boxing became an instant hit with over 50,000 matches played.',
+      title: 'Ecosystem in Motion',
+      description: 'Development of Tiger Links began. Branding, tokenomics, and smart contracts were finalized. The team laid the groundwork for a full gaming ecosystem that rewards skill, not speculation.',
       icon: Gamepad2,
       completed: true
     },
     {
       year: '2024 Q4',
-      title: 'Major Listings',
-      description: 'Listed on major DEXs and achieved $5M market cap. The tiger was officially in the big leagues.',
+      title: 'Market Ignition',
+      description: '$TGBW officially launched on Solana and hit a $445K all-time high organically. Community momentum surged as CertiK and game audits were initiated. No shortcuts—only real progress.',
       icon: TrendingUp,
       completed: false
     },
     {
       year: '2025 Q1',
-      title: 'Mobile Empire',
-      description: 'Full mobile app launch with advanced gaming features and NFT marketplace integration.',
+      title: 'Game Goes Live',
+      description: 'Tiger Links launched on mobile and desktop with full Play-to-Earn integration. Players could now earn Tiger, spend it in-game, and convert it to $TGBW. The Tiger Shop went live—real utility, real value.',
       icon: Target,
-      completed: false
-    },
-    {
-      year: '2025 Q2',
-      title: 'Global Domination',
-      description: 'International expansion and partnerships with major gaming platforms.',
-      icon: Trophy,
       completed: false
     },
   ];
@@ -274,10 +267,10 @@ const AboutPage = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="https://dexscreener.com/solana/6GTBQj1w2AH7xTLrCGijFTHFyjBUZL1Zq2jX1AdSpump"
+                href="https://raydium.io/swap/?inputMint=sol&outputMint=6GTBQj1w2AH7xTLrCGijFTHFyjBUZL1Zq2jX1AdSpump"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-gradient-to-r from-red-600 to-orange-600 hover:from-red-700 hover:to-orange-700 text-white px-8 py-4 rounded-full font-bold text-lg transition-all duration-200 transform hover:scale-105 hover:shadow-lg hover:shadow-orange-500/25 flex items-center justify-center"
+                className="bg-gradient-to-r from-red-600 to-orange-600 hover:from-red-700 hover:to-orange-700 text-white px-8 py-4 rounded-full font-bold text-lg transition-all duration-200 transform hover:scale-105 hover:shadow-lg hover:shadow-orange-500/25 drop-shadow-lg flex items-center justify-center"
               >
                 Buy $TGBW
               </a>

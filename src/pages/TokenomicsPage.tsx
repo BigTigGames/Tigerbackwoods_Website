@@ -1,14 +1,61 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { PieChart, TrendingUp, Shield, Zap, Lock, Users, Coins, Target, Flame, Wallet, Gamepad2 } from 'lucide-react';
 
 const TokenomicsPage = () => {
+  // State for real-time market cap
+  const [marketCap, setMarketCap] = useState('$252,000');
+  const [isLoadingMarketCap, setIsLoadingMarketCap] = useState(false);
+
+  // Function to fetch market cap from Birdeye
+  const fetchMarketCap = async () => {
+    try {
+      setIsLoadingMarketCap(true);
+      const response = await fetch('https://public-api.birdeye.so/public/token/6GTBQj1w2AH7xTLrCGijFTHFyjBUZL1Zq2jX1AdSpump');
+      const data = await response.json();
+      // Birdeye returns market cap as data.data.market_cap_usd or similar
+      if (data.data && (data.data.market_cap_usd || data.data.market_cap)) {
+        const marketCapValue = parseFloat(data.data.market_cap_usd || data.data.market_cap);
+        const formattedMarketCap = new Intl.NumberFormat('en-US', {
+          style: 'currency',
+          currency: 'USD',
+          minimumFractionDigits: 0,
+          maximumFractionDigits: 0,
+        }).format(marketCapValue);
+        setMarketCap(formattedMarketCap);
+      } else if (data.data && data.data.price) {
+        // Fallback: calculate market cap if price and supply are available
+        const price = parseFloat(data.data.price);
+        const circulatingSupply = 623000000; // ~623,000,000 from stats
+        const calculatedMarketCap = price * circulatingSupply;
+        const formattedMarketCap = new Intl.NumberFormat('en-US', {
+          style: 'currency',
+          currency: 'USD',
+          minimumFractionDigits: 0,
+          maximumFractionDigits: 0,
+        }).format(calculatedMarketCap);
+        setMarketCap(formattedMarketCap);
+      }
+    } catch (error) {
+      console.error('Error fetching market cap:', error);
+    } finally {
+      setIsLoadingMarketCap(false);
+    }
+  };
+
+  // Fetch market cap on component mount and every 30 seconds
+  useEffect(() => {
+    fetchMarketCap();
+    const interval = setInterval(fetchMarketCap, 30000); // Update every 30 seconds
+    return () => clearInterval(interval);
+  }, []);
+
   const tokenomics = [
     { label: 'Total Supply', value: '1,000,000,000', description: 'Total Token Supply', percentage: 100, color: 'from-red-600 to-orange-600', icon: Coins },
     { label: '🔥 Tokens Burned', value: '100,000,000', description: 'Permanently Removed from Supply', percentage: 10, color: 'from-orange-600 to-yellow-600', icon: Flame },
     { label: '🔐 Locked Tokens', value: '277,000,000+', description: 'Locked for Game Rewards, Staking & Treasury', percentage: 27.7, color: 'from-blue-600 to-cyan-600', icon: Lock },
     { label: '💰 Circulating Supply', value: '~623,000,000', description: '(After Burn + Locks)', percentage: 62.3, color: 'from-green-600 to-emerald-600', icon: Wallet },
-    { label: '📈 Market Cap', value: '$252,000', description: '(Based on current $TGBW price)', percentage: null, color: 'from-purple-600 to-pink-600', icon: TrendingUp },
+    { label: '📈 Market Cap', value: isLoadingMarketCap ? 'Loading...' : marketCap, description: '(Live from Birdeye)', percentage: null, color: 'from-purple-600 to-pink-600', icon: TrendingUp },
     { label: '👥 Holders', value: '400+', description: 'Wallets Holding $TGBW', percentage: null, color: 'from-gray-600 to-gray-800', icon: Users },
     { label: '🎮 Games', value: '12', description: 'Play-to-Earn Titles in the Ecosystem', percentage: null, color: 'from-yellow-600 to-orange-600', icon: Gamepad2 },
   ];
@@ -45,7 +92,7 @@ const TokenomicsPage = () => {
     { label: '🔥 Tokens Burned', value: '100,000,000', description: 'Permanently Removed from Supply', icon: Flame },
     { label: '🔐 Locked Tokens', value: '277,000,000+', description: 'Locked for Game Rewards, Staking & Treasury', icon: Lock },
     { label: '💰 Circulating Supply', value: '~623,000,000', description: '(After Burn + Locks)', icon: Wallet },
-    { label: '📈 Market Cap', value: '$252,000', description: '(Based on current $TGBW price)', icon: TrendingUp },
+    { label: '📈 Market Cap', value: isLoadingMarketCap ? 'Loading...' : marketCap, description: '(Live from Birdeye)', icon: TrendingUp },
     { label: '👥 Holders', value: '400+', description: 'Wallets Holding $TGBW', icon: Users },
     { label: '🎮 Games', value: '12', description: 'Play-to-Earn Titles in the Ecosystem', icon: Gamepad2 },
   ];

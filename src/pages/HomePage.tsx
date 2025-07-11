@@ -1,9 +1,56 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { TrendingUp, Users, Gamepad2, Coins, Flame, Lock, Wallet, Trophy, Zap, ArrowRight, Target } from 'lucide-react';
 import ImageSlider from '../components/ImageSlider';
 
 const HomePage = () => {
+  // State for real-time market cap
+  const [marketCap, setMarketCap] = useState('$252,000');
+  const [isLoadingMarketCap, setIsLoadingMarketCap] = useState(false);
+
+  // Function to fetch market cap from Birdeye
+  const fetchMarketCap = async () => {
+    try {
+      setIsLoadingMarketCap(true);
+      const response = await fetch('https://public-api.birdeye.so/public/token/6GTBQj1w2AH7xTLrCGijFTHFyjBUZL1Zq2jX1AdSpump');
+      const data = await response.json();
+      // Birdeye returns market cap as data.data.market_cap_usd or similar
+      if (data.data && (data.data.market_cap_usd || data.data.market_cap)) {
+        const marketCapValue = parseFloat(data.data.market_cap_usd || data.data.market_cap);
+        const formattedMarketCap = new Intl.NumberFormat('en-US', {
+          style: 'currency',
+          currency: 'USD',
+          minimumFractionDigits: 0,
+          maximumFractionDigits: 0,
+        }).format(marketCapValue);
+        setMarketCap(formattedMarketCap);
+      } else if (data.data && data.data.price) {
+        // Fallback: calculate market cap if price and supply are available
+        const price = parseFloat(data.data.price);
+        const circulatingSupply = 623000000; // ~623,000,000 from stats
+        const calculatedMarketCap = price * circulatingSupply;
+        const formattedMarketCap = new Intl.NumberFormat('en-US', {
+          style: 'currency',
+          currency: 'USD',
+          minimumFractionDigits: 0,
+          maximumFractionDigits: 0,
+        }).format(calculatedMarketCap);
+        setMarketCap(formattedMarketCap);
+      }
+    } catch (error) {
+      console.error('Error fetching market cap:', error);
+    } finally {
+      setIsLoadingMarketCap(false);
+    }
+  };
+
+  // Fetch market cap on component mount and every 30 seconds
+  useEffect(() => {
+    fetchMarketCap();
+    const interval = setInterval(fetchMarketCap, 30000); // Update every 30 seconds
+    return () => clearInterval(interval);
+  }, []);
+
   // Hero slider images
   const heroImages = [
     {
@@ -37,7 +84,7 @@ const HomePage = () => {
     { label: '🔥 Tokens Burned', value: '100,000,000', description: 'Permanently Removed from Supply', icon: Flame },
     { label: '🔐 Locked Tokens', value: '277,000,000+', description: 'Locked for Game Rewards, Staking & Treasury', icon: Lock },
     { label: '💰 Circulating Supply', value: '~623,000,000', description: '(After Burn + Locks)', icon: Wallet },
-    { label: '📈 Market Cap', value: '$252,000', description: '(Based on current $TGBW price)', icon: TrendingUp },
+    { label: '📈 Market Cap', value: isLoadingMarketCap ? 'Loading...' : marketCap, description: '(Live from Birdeye)', icon: TrendingUp },
     { label: '👥 Holders', value: '400+', description: 'Wallets Holding $TGBW', icon: Users },
     { label: '🎮 Games', value: '12', description: 'Play-to-Earn Titles in the Ecosystem', icon: Gamepad2 },
   ];
@@ -120,7 +167,7 @@ const HomePage = () => {
               className="flex flex-col sm:flex-row gap-4 justify-start"
             >
               <a
-                href="https://dexscreener.com/solana/6GTBQj1w2AH7xTLrCGijFTHFyjBUZL1Zq2jX1AdSpump"
+                href="https://raydium.io/swap/?inputMint=sol&outputMint=6GTBQj1w2AH7xTLrCGijFTHFyjBUZL1Zq2jX1AdSpump"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-gradient-to-r from-red-600 to-orange-600 hover:from-red-700 hover:to-orange-700 text-white px-8 py-4 rounded-full font-bold text-lg transition-all duration-200 transform hover:scale-105 hover:shadow-lg hover:shadow-orange-500/25 drop-shadow-lg flex items-center justify-center"
@@ -137,7 +184,7 @@ const HomePage = () => {
               </a>
               <button className="border-2 border-yellow-500 text-yellow-500 hover:bg-yellow-500 hover:text-black px-8 py-4 rounded-full font-bold text-lg transition-all duration-200 transform hover:scale-105 drop-shadow-lg">
                 <a
-                  href="https://dexscreener.com/solana/6GTBQj1w2AH7xTLrCGijFTHFyjBUZL1Zq2jX1AdSpump"
+                  href="https://raydium.io/swap/?inputMint=sol&outputMint=6GTBQj1w2AH7xTLrCGijFTHFyjBUZL1Zq2jX1AdSpump"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="block w-full h-full"
