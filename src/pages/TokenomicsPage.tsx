@@ -53,10 +53,10 @@ const TokenomicsPage = () => {
   const tokenomics = [
     { label: 'Total Supply', value: '1,000,000,000', description: 'Total Token Supply', percentage: 100, color: 'from-red-600 to-orange-600', icon: Coins },
     { label: '🔥 Tokens Burned', value: '100,000,000', description: 'Permanently Removed from Supply', percentage: 10, color: 'from-orange-600 to-yellow-600', icon: Flame },
-    { label: '🔐 Locked Tokens', value: '277,000,000+', description: 'Locked for Game Rewards, Staking & Treasury', percentage: 27.7, color: 'from-blue-600 to-cyan-600', icon: Lock },
+    { label: '🔐 Locked Tokens', value: '277,000,000+', description: 'Locked for Game Rewards & Treasury', percentage: 27.7, color: 'from-blue-600 to-cyan-600', icon: Lock },
     { label: '💰 Circulating Supply', value: '~623,000,000', description: '(After Burn + Locks)', percentage: 62.3, color: 'from-green-600 to-emerald-600', icon: Wallet },
     { label: '📈 Market Cap', value: isLoadingMarketCap ? 'Loading...' : marketCap, description: '(Live from Birdeye)', percentage: null, color: 'from-purple-600 to-pink-600', icon: TrendingUp },
-    { label: '👥 Holders', value: '400+', description: 'Wallets Holding $TGBW', percentage: null, color: 'from-gray-600 to-gray-800', icon: Users },
+    { label: '👥 Holders', value: '400+', description: 'Wallets Holding TigerLinks Token', percentage: null, color: 'from-gray-600 to-gray-800', icon: Users },
     { label: '🎮 Games', value: '12', description: 'Play-to-Earn Titles in the Ecosystem', percentage: null, color: 'from-yellow-600 to-orange-600', icon: Gamepad2 },
   ];
 
@@ -66,12 +66,6 @@ const TokenomicsPage = () => {
       description: 'Automatic token burns with every transaction reduce supply over time',
       icon: Target,
       color: 'from-red-600 to-orange-600'
-    },
-    {
-      title: 'Staking Rewards',
-      description: 'Earn passive income by staking your $TGBW tokens',
-      icon: Coins,
-      color: 'from-green-600 to-emerald-600'
     },
     {
       title: 'Gaming Utility',
@@ -90,10 +84,10 @@ const TokenomicsPage = () => {
   const metrics = [
     { label: 'Total Supply', value: '1,000,000,000', description: 'Total Token Supply', icon: Coins },
     { label: '🔥 Tokens Burned', value: '100,000,000', description: 'Permanently Removed from Supply', icon: Flame },
-    { label: '🔐 Locked Tokens', value: '277,000,000+', description: 'Locked for Game Rewards, Staking & Treasury', icon: Lock },
+    { label: '🔐 Locked Tokens', value: '277,000,000+', description: 'Locked for Game Rewards & Treasury', icon: Lock },
     { label: '💰 Circulating Supply', value: '~623,000,000', description: '(After Burn + Locks)', icon: Wallet },
     { label: '📈 Market Cap', value: isLoadingMarketCap ? 'Loading...' : marketCap, description: '(Live from Birdeye)', icon: TrendingUp },
-    { label: '👥 Holders', value: '400+', description: 'Wallets Holding $TGBW', icon: Users },
+    { label: '👥 Holders', value: '400+', description: 'Wallets Holding TigerLinks Token', icon: Users },
     { label: '🎮 Games', value: '12', description: 'Play-to-Earn Titles in the Ecosystem', icon: Gamepad2 },
   ];
 
@@ -117,7 +111,7 @@ const TokenomicsPage = () => {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="text-xl text-gray-300 max-w-3xl mx-auto"
             >
-              Discover the economic model behind $TGBW and how it powers the Tiger ecosystem
+              Discover the economic model behind TigerLinks Token and how it powers the Tiger ecosystem
             </motion.p>
           </div>
 
@@ -227,11 +221,11 @@ const TokenomicsPage = () => {
               Token Utility
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              $TGBW isn't just a meme coin - it's a utility token with real-world applications
+              TigerLinks Token isn't just a meme coin - it's a utility token with real-world applications
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {features.map((feature, index) => (
               <motion.div
                 key={feature.title}

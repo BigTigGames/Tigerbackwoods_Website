@@ -6,65 +6,66 @@ const AboutPage = () => {
   const timeline = [
     {
       year: '2024 Q1',
-      title: 'The Birth of a Legend',
-      description: '$TGBW was born from a simple idea: what if Tiger Woods was actually a tiger? The meme exploded across crypto Twitter.',
+      title: 'The Problem, Not the Meme',
+      description: 'TigerLinks began with frustration, not hype. The crypto and Web3 gaming space had become saturated with empty tokens, short-lived games, and extractive launches that prioritized speculation over players. The goal wasn\'t to launch another coin — it was to design a system where games actually mattered, where users came first, and where value was created through participation, not promises.',
       icon: Zap,
       completed: true
     },
     {
       year: '2024 Q2',
-      title: 'Community Awakens',
-      description: 'Tiger Backwoods launched with no presale, no VCs, and no hype machine—just a bold vision. 100 million tokens were burned, 277 million+ locked, and the early community formed around a real Play-to-Earn promise.',
+      title: 'Building Without a Safety Net',
+      description: 'TigerLinks launched without a presale, without venture capital, and without paid marketing. Instead of chasing attention, the team focused on fundamentals: fair distribution, transparent supply mechanics, and a clear commitment to building real products. Early supply reductions, long-term locks, and conservative economics were implemented to protect the ecosystem from short-term exploitation.\n\nThe community that formed wasn\'t driven by hype — it was driven by alignment.',
       icon: Users,
       completed: true
     },
     {
       year: '2024 Q3',
-      title: 'Ecosystem in Motion',
-      description: 'Development of Tiger Links began. Branding, tokenomics, and smart contracts were finalized. The team laid the groundwork for a full gaming ecosystem that rewards skill, not speculation.',
+      title: 'Designing the Engine',
+      description: 'This phase was about architecture. TigerLinks was defined not as a single game, but as a gaming ecosystem with shared systems:\n\n• a unified in-game currency\n• skill-based progression\n• reward loops that favor engagement over grinding\n• token utility designed to grow with usage, not speculation\n\nGame concepts were explored, tested, discarded, and refined. The focus stayed internal: mechanics first, visuals later.',
       icon: Gamepad2,
       completed: true
     },
     {
       year: '2024 Q4',
-      title: 'Market Ignition',
-      description: '$TGBW officially launched on Solana and hit a $445K all-time high organically. Community momentum surged as CertiK and game audits were initiated. No shortcuts—only real progress.',
+      title: 'Proof Without Promotion',
+      description: 'TigerLinks went live on Solana through organic momentum. No paid influencers. No artificial volume. The project reached a $445K all-time high driven by real community activity. Instead of accelerating marketing, the team slowed down — prioritizing audits, economic stress-testing, and long-term viability over short-term attention.\n\nThis was a deliberate decision: build trust before scale.',
       icon: TrendingUp,
-      completed: false
+      completed: true
     },
     {
       year: '2025 Q1',
-      title: 'Game Goes Live',
-      description: 'Tiger Links launched on mobile and desktop with full Play-to-Earn integration. Players could now earn Tiger, spend it in-game, and convert it to $TGBW. The Tiger Shop went live—real utility, real value.',
+      title: 'From Concept to Playable Reality',
+      description: 'TigerLinks crossed its most important threshold: playable systems. Core gameplay mechanics, early builds, and internal test environments validated the original thesis — skill-based play could support real engagement without devolving into gambling or pay-to-win dynamics. The in-game economy began taking shape, centered around earned value, spending sinks, and controlled circulation.\n\nThis was no longer a roadmap. It was a working product.',
       icon: Target,
+      completed: true
+    },
+    {
+      year: '2025 Q2',
+      title: 'Pressure Testing Everything',
+      description: 'Rather than rushing to market, the team entered a heavy iteration phase. Features were cut. Systems were rewritten. Reward loops were tightened. Every mechanic was tested against a single question: does this increase long-term player retention? If the answer was no, it didn\'t ship.\n\nAt the same time, the broader Web3 market cooled — reinforcing the decision to build quietly instead of chasing cycles.',
+      icon: Trophy,
+      completed: true
+    },
+    {
+      year: '2025 Q3',
+      title: 'Focus Over Expansion',
+      description: 'While many projects pivoted or faded, TigerLinks doubled down on focus. Instead of expanding outward, the team refined inward: gameplay feel, onboarding flow, economic balance, and player motivation. Short-term growth was intentionally sacrificed to avoid structural debt.\n\nThis period defined TigerLinks\' identity: a game-first platform, not a token-first experiment.',
+      icon: Target,
+      completed: true
+    },
+    {
+      year: '2025 Q4',
+      title: 'Raising the Bar',
+      description: 'As development matured, expectations rose. Visual polish, character identity, and presentation became priorities — not for marketing, but for legitimacy. The TigerLinks brand evolved from a concept into a recognizable universe with tone, personality, and consistency.\n\nBy the end of the year, the foundation was set for public-facing growth — without compromising the original principles.',
+      icon: Zap,
+      completed: true
+    },
+    {
+      year: '2026 Q1',
+      title: 'Ready to Be Judged',
+      description: 'TigerLinks enters 2026 as a fully formed ecosystem — not chasing attention, but ready for it. The focus shifts from proving that something can be built to proving that it can last. Gameplay, economy, and community are now aligned under one goal: sustainable growth driven by players, not speculation.\n\nTigerLinks is no longer reacting to what crypto was. It\'s defining what Web3 gaming should be.',
+      icon: Trophy,
       completed: false
-    },
-  ];
-
-  const team = [
-    {
-      name: 'TigerDev',
-      role: 'Lead Developer',
-      description: 'Former gaming industry veteran with 10+ years experience',
-      avatar: '🐅'
-    },
-    {
-      name: 'MemeMaster',
-      role: 'Community Manager',
-      description: 'Crypto Twitter legend with 100K+ followers',
-      avatar: '🎯'
-    },
-    {
-      name: 'GameChanger',
-      role: 'Game Designer',
-      description: 'Created viral mobile games with millions of downloads',
-      avatar: '🎮'
-    },
-    {
-      name: 'MarketingBeast',
-      role: 'Marketing Lead',
-      description: 'Growth hacker who launched multiple successful tokens',
-      avatar: '🚀'
     },
   ];
 
@@ -109,7 +110,7 @@ const AboutPage = () => {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="text-xl text-gray-300 max-w-3xl mx-auto"
             >
-              From meme to mayhem - the incredible journey of how $TGBW became the most aggressive meme coin in the jungle
+              From conviction to execution — how TigerLinks was built to outlast the noise
             </motion.p>
           </div>
 
@@ -125,11 +126,11 @@ const AboutPage = () => {
                 <div>
                   <h2 className="text-3xl font-bold text-white mb-4">The Origin Story</h2>
                   <p className="text-gray-300 leading-relaxed">
-                    What happens when you mix Tiger Woods' killer instinct, Tony the Tiger's hype, and a stoner's love for fat Backwoods blunts? You get Tiger Backwoods — a golf-swinging, trash-talking legend born from smoke and chaos. Rumor has it he emerged after a blunt so strong it split space-time, fusing sports greatness with cereal box swagger and blunt-fueled genius. Now he's here to take over crypto, torch every scam coin, and build the wildest Play-to-Earn empire the blockchain's ever seen.
+                    What happens when you mix Tiger Woods' killer instinct, Tony the Tiger's hype, and a stoner's love for fat Backwoods blunts? You get Tigerlinkz — a golf-swinging, trash-talking legend born from smoke and chaos. Rumor has it he emerged after a blunt so strong it split space-time, fusing sports greatness with cereal box swagger and blunt-fueled genius. Now he's here to take over crypto, torch every scam coin, and build the wildest Play-to-Earn empire the blockchain's ever seen.
                   </p>
                 </div>
                 <div className="text-center flex items-center justify-center">
-                  <img src="/hero-3.jpg" alt="Tiger Backwoods" className="w-80 h-80 rounded-full object-cover shadow-2xl shadow-red-500/50 border-4 border-orange-500" />
+                  <img src="/hero-3.jpg" alt="Tigerlinkz" className="w-80 h-80 rounded-full object-cover shadow-2xl shadow-red-500/50 border-4 border-orange-500" />
                 </div>
               </div>
             </div>
@@ -142,10 +143,10 @@ const AboutPage = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-red-500 to-orange-500 bg-clip-text text-transparent">
-              Evolution Timeline
+              📜 TigerLinks — The Real Story
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              From meme to mayhem - our journey through the crypto jungle
+              Our journey through the crypto jungle
             </p>
           </div>
 
@@ -173,7 +174,7 @@ const AboutPage = () => {
                           <div className="text-xl font-bold text-white">{item.title}</div>
                         </div>
                       </div>
-                      <p className="text-gray-400">{item.description}</p>
+                      <p className="text-gray-400 whitespace-pre-line">{item.description}</p>
                     </div>
                   </div>
 
@@ -186,39 +187,6 @@ const AboutPage = () => {
         </div>
       </section>
 
-      {/* Team */}
-      <section className="py-20 bg-gradient-to-br from-red-950/20 to-orange-950/20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-red-500 to-orange-500 bg-clip-text text-transparent">
-              Meet the Pack
-            </h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              The legendary team behind $TGBW (identities protected for their safety)
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {team.map((member, index) => (
-              <motion.div
-                key={member.name}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="bg-gradient-to-br from-red-900/30 to-orange-900/30 p-6 rounded-xl border border-red-800/50 hover:border-orange-500/50 transition-all duration-300 hover:scale-105 text-center group"
-              >
-                <div className="w-20 h-20 bg-gradient-to-br from-red-600 to-orange-600 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
-                  <span className="text-3xl">{member.avatar}</span>
-                </div>
-                <h3 className="text-xl font-bold text-white mb-2">{member.name}</h3>
-                <div className="text-orange-400 font-semibold mb-3">{member.role}</div>
-                <p className="text-gray-400 text-sm">{member.description}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Values */}
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -227,7 +195,7 @@ const AboutPage = () => {
               Our Values
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              The principles that guide every decision in the $TGBW ecosystem
+              The principles that guide every decision in the TigerLinks ecosystem
             </p>
           </div>
 
@@ -263,7 +231,7 @@ const AboutPage = () => {
               Ready to Join the Pack?
             </h2>
             <p className="text-xl text-gray-300 mb-8">
-              The tiger's journey is just beginning. Be part of the most aggressive meme coin movement in crypto.
+              The tiger's journey is just beginning. Be part of the most innovative Web3 gaming ecosystem.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a

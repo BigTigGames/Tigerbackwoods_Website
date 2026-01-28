@@ -5,7 +5,7 @@ import { Twitter, MessageCircle, Zap } from 'lucide-react';
 const Footer = () => {
   const socialLinks = [
     { icon: Twitter, href: 'https://x.com/tigerbckwoods', label: 'X' },
-    { icon: MessageCircle, href: 'https://t.me/TIGERBACKWOODSOFFICIAL', label: 'Telegram' },
+    { icon: MessageCircle, href: 'https://t.me/TIGERLINKZOFFICIAL', label: 'Telegram' },
     { icon: Twitter, href: 'https://x.com/tigerbckwoods', label: 'X' },
   ];
 
@@ -27,7 +27,7 @@ const Footer = () => {
                 <Zap className="w-6 h-6 text-yellow-400" />
               </div>
               <span className="text-xl font-bold bg-gradient-to-r from-red-500 to-orange-500 bg-clip-text text-transparent">
-                TigerBackwoods
+                Tigerlinkz
               </span>
             </div>
             <p className="text-gray-400 mb-4 max-w-md">
@@ -89,7 +89,7 @@ const Footer = () => {
 
         <div className="border-t border-red-900/50 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-400 text-sm">
-            © 2025 TigerBackwoods. All rights reserved. Not financial advice.
+            © 2025 Tigerlinkz. All rights reserved. Not financial advice.
           </p>
           <div className="flex items-center space-x-2 mt-4 md:mt-0">
             <span className="text-gray-400 text-sm">Powered by</span>

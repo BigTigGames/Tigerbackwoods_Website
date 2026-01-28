@@ -9,6 +9,11 @@ interface ImageSliderProps {
     title?: string;
     description?: string;
   }[];
+  video?: {
+    src: string | string[];
+    poster?: string;
+    type?: string;
+  };
   autoPlayInterval?: number;
   showNavigation?: boolean;
   showDots?: boolean;
@@ -16,6 +21,7 @@ interface ImageSliderProps {
 
 const ImageSlider: React.FC<ImageSliderProps> = ({
   images,
+  video,
   autoPlayInterval = 5000,
   showNavigation = true,
   showDots = true,
@@ -24,14 +30,14 @@ const ImageSlider: React.FC<ImageSliderProps> = ({
 
   // Auto-play functionality
   useEffect(() => {
-    if (autoPlayInterval > 0) {
+    if (autoPlayInterval > 0 && (!video || images.length > 1)) {
       const interval = setInterval(() => {
         setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
       }, autoPlayInterval);
 
       return () => clearInterval(interval);
     }
-  }, [autoPlayInterval, images.length]);
+  }, [autoPlayInterval, images.length, video]);
 
   const goToNext = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
@@ -45,12 +51,62 @@ const ImageSlider: React.FC<ImageSliderProps> = ({
     setCurrentIndex(index);
   };
 
+  // If video is provided and no images, show video only
+  if (video && (!images || images.length === 0)) {
+    return (
+      <div className="relative w-full h-screen overflow-hidden">
+        <video
+          poster={video.poster}
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="w-full h-full object-cover object-center"
+        >
+          {Array.isArray(video.src) ? (
+            video.src.map((src, index) => (
+              <source key={index} src={src} type={video.type} />
+            ))
+          ) : (
+            <source src={video.src} type={video.type} />
+          )}
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    );
+  }
+
+  // If no video and no images, return null
   if (!images || images.length === 0) {
     return null;
   }
 
   return (
     <div className="relative w-full h-screen overflow-hidden">
+      {/* Video Background (if provided) */}
+      {video && (
+        <video
+          poster={video.poster}
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover object-center"
+          onLoadStart={() => console.log('Video loading started')}
+          onCanPlay={() => console.log('Video can play')}
+          onError={(e) => console.error('Video error:', e)}
+        >
+          {Array.isArray(video.src) ? (
+            video.src.map((src, index) => (
+              <source key={index} src={src} type={video.type} />
+            ))
+          ) : (
+            <source src={video.src} type={video.type} />
+          )}
+          Your browser does not support the video tag.
+        </video>
+      )}
+
       {/* Image Container */}
       <div className="relative w-full h-full">
         <AnimatePresence mode="wait">
@@ -62,12 +118,12 @@ const ImageSlider: React.FC<ImageSliderProps> = ({
             transition={{ duration: 0.5 }}
             className="absolute inset-0"
           >
-                         <img
-               src={images[currentIndex].src}
-               alt={images[currentIndex].alt}
-               className="w-full h-full object-cover object-center"
-               style={{ objectPosition: 'center' }}
-             />
+            <img
+              src={images[currentIndex].src}
+              alt={images[currentIndex].alt}
+              className="w-full h-full object-cover object-center"
+              style={{ objectPosition: 'center' }}
+            />
           </motion.div>
         </AnimatePresence>
       </div>
