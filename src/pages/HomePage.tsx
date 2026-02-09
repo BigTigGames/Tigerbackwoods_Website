@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import { TrendingUp, Users, Gamepad2, Coins, Flame, Lock, Wallet, Trophy, Zap, ArrowRight, Target, Shield } from 'lucide-react';
 import ImageSlider from '../components/ImageSlider';
 
@@ -160,23 +161,47 @@ const HomePage = () => {
                 initial={{ opacity: 0, x: -50 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
-                className="flex flex-col sm:flex-row gap-4"
+                className="flex flex-col gap-4"
               >
-                <a
-                  href="https://www.tiger-backwoods.com/Tigerlinks"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="bg-gradient-to-r from-red-600 to-orange-600 hover:from-red-700 hover:to-orange-700 text-white px-8 py-4 rounded-full font-bold text-lg transition-all duration-200 transform hover:scale-105 hover:shadow-lg hover:shadow-orange-500/25 drop-shadow-lg flex items-center justify-center gap-2"
-                >
-                  <svg xmlns='http://www.w3.org/2000/svg' className='w-6 h-6' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M14.752 11.168l-6.518-3.759A1 1 0 007 8.06v7.88a1 1 0 001.234.97l6.518-1.878A1 1 0 0016 14.06V9.94a1 1 0 00-1.248-.772z' /></svg>
-                  Play Free
-                </a>
-                <a
-                  href="/whitepaper"
-                  className="border-2 border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-white px-8 py-4 rounded-full font-bold text-lg transition-all duration-200 transform hover:scale-105 drop-shadow-lg"
-                >
-                  Read Whitepaper
-                </a>
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <a
+                    href="https://tigerlinks.netlify.app/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-gradient-to-r from-red-600 to-orange-600 hover:from-red-700 hover:to-orange-700 text-white px-8 py-4 rounded-full font-bold text-lg transition-all duration-200 transform hover:scale-105 hover:shadow-lg hover:shadow-orange-500/25 drop-shadow-lg flex items-center justify-center gap-2"
+                  >
+                    <svg xmlns='http://www.w3.org/2000/svg' className='w-6 h-6' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M14.752 11.168l-6.518-3.759A1 1 0 007 8.06v7.88a1 1 0 001.234.97l6.518-1.878A1 1 0 0016 14.06V9.94a1 1 0 00-1.248-.772z' /></svg>
+                    Play Free
+                  </a>
+                  <Link
+                    to="/whitepaper"
+                    className="border-2 border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-white px-8 py-4 rounded-full font-bold text-lg transition-all duration-200 transform hover:scale-105 drop-shadow-lg inline-flex items-center justify-center"
+                  >
+                    Read Whitepaper
+                  </Link>
+                </div>
+                
+                {/* Telegram Buttons */}
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <a
+                    href="https://t.me/TIGERLINKZ"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="border-2 border-teal-500 text-teal-400 hover:bg-teal-500 hover:text-white px-6 py-3 rounded-full font-semibold text-base transition-all duration-200 transform hover:scale-105 drop-shadow-lg inline-flex items-center justify-center gap-2"
+                  >
+                    <Users className="w-5 h-5" />
+                    Join Telegram US
+                  </a>
+                  <a
+                    href="https://t.me/+3tnLi0aMQso0MjU1"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="border-2 border-cyan-500 text-cyan-400 hover:bg-cyan-500 hover:text-white px-6 py-3 rounded-full font-semibold text-base transition-all duration-200 transform hover:scale-105 drop-shadow-lg inline-flex items-center justify-center gap-2"
+                  >
+                    <Users className="w-5 h-5" />
+                    Join Telegram Philippines
+                  </a>
+                </div>
               </motion.div>
             </div>
 
@@ -206,6 +231,104 @@ const HomePage = () => {
                 </div>
               </div>
             </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Join Our Community Section */}
+      <section className="py-20 bg-black relative overflow-hidden">
+        {/* Background Image with Overlay */}
+        <div className="absolute inset-0 z-0">
+          <img 
+            src="/hero-3.jpg" 
+            alt="Community Background" 
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-black/70"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/60"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-red-900/30 via-transparent to-orange-900/30"></div>
+        </div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-red-500 to-orange-500 bg-clip-text text-transparent drop-shadow-lg">
+              Join Our Community
+            </h2>
+            <p className="text-xl text-gray-100 max-w-3xl mx-auto drop-shadow-lg">
+              Connect with thousands of players and traders in the TigerLinks ecosystem
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <motion.a
+              href="https://x.com/tigerlinkz"
+              target="_blank"
+              rel="noopener noreferrer"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              className="bg-black/60 backdrop-blur-md p-6 rounded-xl border-2 border-blue-800/50 hover:border-blue-500 transition-all duration-300 hover:shadow-xl hover:shadow-blue-500/30 hover:scale-105 group"
+            >
+              <div className="text-center">
+                <div className="w-16 h-16 bg-gradient-to-br from-blue-600 to-blue-700 rounded-full flex items-center justify-center mb-4 mx-auto group-hover:scale-110 transition-transform shadow-lg">
+                  <Target className="w-8 h-8 text-white" />
+                </div>
+                <h3 className="text-xl font-bold text-white mb-2">Follow on X</h3>
+                <p className="text-gray-300 text-sm">Latest updates and announcements</p>
+              </div>
+            </motion.a>
+
+            <motion.a
+              href="https://t.me/TIGERLINKZ"
+              target="_blank"
+              rel="noopener noreferrer"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="bg-black/60 backdrop-blur-md p-6 rounded-xl border-2 border-teal-800/50 hover:border-teal-500 transition-all duration-300 hover:shadow-xl hover:shadow-teal-500/30 hover:scale-105 group"
+            >
+              <div className="text-center">
+                <div className="w-16 h-16 bg-gradient-to-br from-teal-600 to-teal-700 rounded-full flex items-center justify-center mb-4 mx-auto group-hover:scale-110 transition-transform shadow-lg">
+                  <Users className="w-8 h-8 text-white" />
+                </div>
+                <h3 className="text-xl font-bold text-white mb-2">Join Telegram US</h3>
+                <p className="text-gray-300 text-sm">Chat with the US community</p>
+              </div>
+            </motion.a>
+
+            <motion.a
+              href="https://t.me/+3tnLi0aMQso0MjU1"
+              target="_blank"
+              rel="noopener noreferrer"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="bg-black/60 backdrop-blur-md p-6 rounded-xl border-2 border-cyan-800/50 hover:border-cyan-500 transition-all duration-300 hover:shadow-xl hover:shadow-cyan-500/30 hover:scale-105 group"
+            >
+              <div className="text-center">
+                <div className="w-16 h-16 bg-gradient-to-br from-cyan-600 to-cyan-700 rounded-full flex items-center justify-center mb-4 mx-auto group-hover:scale-110 transition-transform shadow-lg">
+                  <Users className="w-8 h-8 text-white" />
+                </div>
+                <h3 className="text-xl font-bold text-white mb-2">Join Telegram Philippines</h3>
+                <p className="text-gray-300 text-sm">Chat with the Philippines community</p>
+              </div>
+            </motion.a>
+
+            <motion.a
+              href="#"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              className="bg-black/60 backdrop-blur-md p-6 rounded-xl border-2 border-purple-800/50 hover:border-purple-500 transition-all duration-300 hover:shadow-xl hover:shadow-purple-500/30 hover:scale-105 group"
+            >
+              <div className="text-center">
+                <div className="w-16 h-16 bg-gradient-to-br from-purple-600 to-purple-700 rounded-full flex items-center justify-center mb-4 mx-auto group-hover:scale-110 transition-transform shadow-lg">
+                  <Gamepad2 className="w-8 h-8 text-white" />
+                </div>
+                <h3 className="text-xl font-bold text-white mb-2">Join Discord</h3>
+                <p className="text-gray-300 text-sm">Gaming and tournaments</p>
+              </div>
+            </motion.a>
           </div>
         </div>
       </section>
@@ -461,70 +584,6 @@ const HomePage = () => {
               <h3 className="text-2xl font-bold text-white mb-4">Transparent Token Allocation</h3>
               <p className="text-gray-400">All token distributions and locks are publicly verifiable</p>
             </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* Community Section */}
-      <section className="py-20 bg-gradient-to-br from-red-950/20 to-orange-950/20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-red-500 to-orange-500 bg-clip-text text-transparent">
-              Join the Pack
-            </h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Connect with thousands of degens in the Tiger community
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <motion.a
-              href="https://x.com/tigerbckwoods"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="bg-gradient-to-br from-blue-900/30 to-blue-700/30 p-8 rounded-xl border border-blue-800/50 hover:border-blue-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/20 hover:scale-105 group"
-            >
-              <div className="text-center">
-                <div className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mb-4 mx-auto group-hover:scale-110 transition-transform">
-                  <Target className="w-8 h-8 text-white" />
-                </div>
-                <h3 className="text-2xl font-bold text-white mb-2">X</h3>
-                <p className="text-gray-400">Latest updates and memes</p>
-              </div>
-            </motion.a>
-
-            <motion.a
-              href="https://t.me/TIGERLINKZOFFICIAL"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="bg-gradient-to-br from-teal-900/30 to-teal-700/30 p-8 rounded-xl border border-teal-800/50 hover:border-teal-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-teal-500/20 hover:scale-105 group"
-            >
-              <div className="text-center">
-                <div className="w-16 h-16 bg-teal-600 rounded-full flex items-center justify-center mb-4 mx-auto group-hover:scale-110 transition-transform">
-                  <Users className="w-8 h-8 text-white" />
-                </div>
-                <h3 className="text-2xl font-bold text-white mb-2">Telegram</h3>
-                <p className="text-gray-400">Chat with the community</p>
-              </div>
-            </motion.a>
-
-            <motion.a
-              href="#"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-              className="bg-gradient-to-br from-purple-900/30 to-purple-700/30 p-8 rounded-xl border border-purple-800/50 hover:border-purple-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/20 hover:scale-105 group"
-            >
-              <div className="text-center">
-                <div className="w-16 h-16 bg-purple-600 rounded-full flex items-center justify-center mb-4 mx-auto group-hover:scale-110 transition-transform">
-                  <Gamepad2 className="w-8 h-8 text-white" />
-                </div>
-                <h3 className="text-2xl font-bold text-white mb-2">Discord</h3>
-                <p className="text-gray-400">Gaming and tournaments</p>
-              </div>
-            </motion.a>
           </div>
         </div>
       </section>

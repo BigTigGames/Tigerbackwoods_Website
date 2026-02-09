@@ -119,18 +119,61 @@ const AboutPage = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="max-w-4xl mx-auto"
+            className="relative min-h-screen flex items-center justify-center overflow-hidden rounded-2xl"
           >
-            <div className="bg-gradient-to-br from-red-900/30 to-orange-900/30 p-8 rounded-xl border border-red-800/50 mb-16">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-                <div>
-                  <h2 className="text-3xl font-bold text-white mb-4">The Origin Story</h2>
-                  <p className="text-gray-300 leading-relaxed">
-                    What happens when you mix Tiger Woods' killer instinct, Tony the Tiger's hype, and a stoner's love for fat Backwoods blunts? You get Tigerlinkz — a golf-swinging, trash-talking legend born from smoke and chaos. Rumor has it he emerged after a blunt so strong it split space-time, fusing sports greatness with cereal box swagger and blunt-fueled genius. Now he's here to take over crypto, torch every scam coin, and build the wildest Play-to-Earn empire the blockchain's ever seen.
-                  </p>
+            {/* Background Image */}
+            <div className="absolute inset-0 z-0">
+              <img 
+                src="/hero-3.jpg" 
+                alt="TigerLinkz Origin" 
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-black/75"></div>
+              <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/60"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-red-900/40 via-transparent to-orange-900/40"></div>
+            </div>
+
+            {/* Content */}
+            <div className="relative z-10 max-w-5xl mx-auto px-8 py-20">
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-8 text-center drop-shadow-lg">The Origin Story</h2>
+              
+              <div className="space-y-6 text-gray-100 leading-relaxed text-lg backdrop-blur-sm bg-black/30 p-8 rounded-xl border border-orange-500/30">
+                <p>
+                  TigerLinkz wasn't created as a joke, a trend, or a quick flip.
+                </p>
+                <p className="font-semibold text-white text-xl">
+                  It was born out of frustration.
+                </p>
+                <p>
+                  After watching the crypto space get flooded with empty promises, rigged systems, and projects designed to extract value instead of create it, the idea became simple: <span className="text-orange-400 font-semibold">build something real—or don't build at all.</span>
+                </p>
+                <p>
+                  TigerLinkz started with a belief that skill should matter again. That competition should be fair. That players should win because they're better—not because the system is tilted, botted, or paywalled beyond reach.
+                </p>
+                
+                <div className="my-8 pl-6 border-l-4 border-orange-500 bg-black/40 py-4 rounded-r-lg">
+                  <p className="font-semibold text-white mb-3 text-xl">The name represents a mindset.</p>
+                  <p className="mb-2"><span className="text-orange-400 font-bold text-lg">Tiger</span> — relentless focus, confidence under pressure, and the refusal to back down.</p>
+                  <p><span className="text-orange-400 font-bold text-lg">Linkz</span> — connection: players to players, effort to reward, time invested to value earned.</p>
                 </div>
-                <div className="text-center flex items-center justify-center">
-                  <img src="/hero-3.jpg" alt="Tigerlinkz" className="w-80 h-80 rounded-full object-cover shadow-2xl shadow-red-500/50 border-4 border-orange-500" />
+                
+                <p>
+                  At its core, TigerLinkz is about proving that Play-to-Earn doesn't have to mean play-to-lose. That a game can be competitive, rewarding, and transparent without being predatory. That a community can grow without being farmed.
+                </p>
+                <p>
+                  This isn't about hype cycles or pump charts.
+                </p>
+                <p className="font-semibold text-white text-xl">
+                  It's about building a system where skill compounds, trust is earned, and players actually want to stay.
+                </p>
+                <p>
+                  TigerLinkz exists to raise the standard — for games, for crypto, and for the people who show up ready to compete.
+                </p>
+                
+                <div className="mt-8 text-center space-y-3 pt-6 border-t border-orange-500/50">
+                  <p className="text-white font-bold text-xl">No smoke.</p>
+                  <p className="text-white font-bold text-xl">No gimmicks.</p>
+                  <p className="text-orange-400 font-bold text-3xl drop-shadow-lg">Just execution.</p>
                 </div>
               </div>
             </div>
