@@ -85,7 +85,7 @@ const Navbar = () => {
             </div>
 
             <a
-              href="https://tigerlinks.netlify.app/"
+              href="https://tigerlinkz.io/Match3/"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-gradient-to-r from-red-600 to-orange-600 hover:from-red-700 hover:to-orange-700 text-white px-6 py-2 rounded-full font-semibold transition-all duration-200 transform hover:scale-105 hover:shadow-lg hover:shadow-orange-500/25"
@@ -177,7 +177,7 @@ const Navbar = () => {
             </div>
             
             <a
-              href="https://tigerlinks.netlify.app/"
+              href="https://tigerlinkz.io/Match3/"
               target="_blank"
               rel="noopener noreferrer"
               className="w-full mt-4 bg-gradient-to-r from-red-600 to-orange-600 hover:from-red-700 hover:to-orange-700 text-white px-6 py-2 rounded-full font-semibold transition-all duration-200 text-center block"
