@@ -156,7 +156,7 @@ const GamesPage = () => {
                 className="flex flex-col sm:flex-row gap-4"
               >
                 <a
-                  href="https://www.tiger-backwoods.com/Tigerlinks"
+                  href="https://tigerlinkz.io/Match3/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="bg-gradient-to-r from-red-600 to-orange-600 hover:from-red-700 hover:to-orange-700 text-white px-8 py-4 rounded-full font-bold text-lg transition-all duration-200 transform hover:scale-105 hover:shadow-lg hover:shadow-orange-500/25 drop-shadow-lg flex items-center justify-center gap-2"
